@@ -1,4 +1,15 @@
-# CheckList
-### Solar System Exploration, 1950s – 1960s
+# CheckList (Remaining)
+### Angular
 
-- [X] Mercury
+- [X] BlueBallGame
+- [X] Login Template Form
+- [X] Student App
+- [X] Welcome App
+
+
+### Node files
+####AngularJs
+- [X] Acme Product App
+
+
+### TypeScript
