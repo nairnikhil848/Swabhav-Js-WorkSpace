@@ -1,0 +1,36 @@
+<html>
+
+   <head>
+      <title>Angular JS Services</title>
+      <script src="../angular.js"></script>
+   </head>
+   
+   <body>
+      <h2>AngularJS Sample Application</h2>
+      
+      <div ng-app = "mainApp" ng-controller = "CalcController">
+         <p>Enter a number: <input type = "number" ng-model = "number" /></p>
+         <button ng-click = "square()">X<sup>2</sup></button>
+         <p>Result: {{result}}</p>
+      </div>
+      
+      <script>
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.service('CalcService', function() {
+            this.square = function(a) {
+               console.log(a)
+               return a
+            }
+         });
+         
+         mainApp.controller('CalcController',[ '$scope','CalcService',function($scope, CalcService) {
+            $scope.square = function() {
+               console.log($scope.number)
+               $scope.result = CalcService.square($scope.number);
+            }
+         }]);
+      </script>
+      
+   </body>
+</html>

@@ -1,0 +1,151 @@
+<div class="container">
+  <div
+    ng-class="{'alert alert-danger': !alert.output,'alert alert-success': alert.output}"
+    ng-style="alert.style"
+    role="alert"
+  >
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{alert.Result}}</strong>
+  </div>
+
+  <br />
+  <h1 class="text-center mx-auto"
+  style="font-family: Arial, Helvetica, sans-serif; font-weight: bolder"
+  class="text-center mx-auto">Edit Your Form</h1>
+  <form
+    class="form-horizontal"
+    name="studentForm"
+    ng-submit="PostStudent(studentForm.$valid,studentForm.$pristine)"
+    novalidate
+  >
+    <label class="col-sm-offset-8 col-sm-4" for="name">{{validity}} </label>
+    <!-- <label class="col-sm-offset-8 col-sm-4" for="name">{{studentForm.$pristine}} </label> -->
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-8">
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          ng-model="student.name"
+          ng-minlength="3"
+          ng-maxlength="10"
+          placeholder="Enter Name"
+          required
+        />
+        <span
+          ng-show="studentForm.student.name.$pristine && studentForm.student.name.$invalid"
+          >The name is required.</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-8">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          ng-model="student.email"
+          placeholder="Enter email"
+          name="email"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="rollno">Roll no:</label>
+      <div class="col-sm-8">
+        <input
+          type="rollno"
+          class="form-control"
+          id="rollno"
+          ng-model="student.rollno"
+          placeholder="Enter Rollno"
+          name="rollNo"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Date">Date:</label>
+      <div class="col-sm-8">
+        <input
+          type="date"
+          id="date"
+          name="date"
+          ng-model="student.date"
+          class="form-control datepicker"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="age">Age:</label
+      ><label class="col-sm-10">{{student.age}}</label><br /><br />
+      <div class="slidecontainer col-sm-offset-2 col-sm-8">
+        <input
+          type="range"
+          id="vol"
+          ng-model="student.age"
+          name="vol"
+          min="1"
+          max="100"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2">
+        <label class="col-sm-1" for="sex">Sex:</label>
+        <div class="form-check form-check-inline col-sm-1">
+          <input
+            class="form-check-input"
+            type="radio"
+            ng-model="student.isMale"
+            name="sex"
+            id="sexM"
+            value="true"
+            checked
+          />
+          <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-2">
+          <input
+            class="form-check-input"
+            type="radio"
+            ng-model="student.isMale"
+            name="sex"
+            id="sexF"
+            value="false"
+          />
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-offset-2 col-sm-5">
+        <button
+          class="btn btn-primary"
+          id="submit"
+          ng-click="updateStudent(studentForm.$valid,studentForm.$pristine)"
+        >
+          Update
+        </button>
+      </div>
+
+      <div class="col-sm-1">
+        <button
+          type="submit"
+          class="btn btn-danger"
+          ng-click="clear()"
+          id="submit"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

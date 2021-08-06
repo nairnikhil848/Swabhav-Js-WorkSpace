@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div
+    ng-class="{'alert alert-danger': !alert.output,'alert alert-success': alert.output}"
+    ng-style="alert.style"
+    role="alert"
+  >
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{alert.Result}}</strong>
+  </div>
+
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Are you Sure you want to Delete?
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            data-dismiss="modal"
+            ng-click="deleteStudent()"
+            class="btn btn-danger"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label
+    class="col-sm-12"
+    ng-style="list"
+    style="font-size: xx-large; font-weight: bolder"
+  >
+    Student Count: <label>{{count}}</label>
+  </label>
+
+  <table
+    class="col-sm-12 table table-dark table-striped-dark"
+    ng-style="list"
+    id="table"
+  >
+    <tr scope="row">
+      <th>ID</th>
+      <th>Name</th>
+      <th>RollNo</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Date</th>
+    </tr>
+    <tbody>
+      <tr scope="row" ng-repeat="student in studentList">
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.rollNo}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.isMale | gender}}</td>
+        <td>{{student.date}}</td>
+
+        <td>
+          <button class="btn btn-warning" ng-click="SelectStudent(student)">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+            ng-click="SaveStudent(student)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- ng-click="deleteStudent(student)" -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="auth.php" method="POST" onsubmit="return(validate())">
+        <br>
+        <label >Name: </label>
+        <input type="text" id="name"  name="username"></input><br>
+        <label >Password: </label>
+        <input type="password" id="password" name="password"></input><br>
+        <input type="submit" />
+    </form>
+</body>
+    <script>
+        function validate(){
+
+            var name = document.querySelector("#name");
+            if(name.value == ""){
+                alert("insert a name")
+                return false;
+            }
+            var password = document.querySelector("#password");
+            if(password.value == ""){
+                alert("insert a password")
+                return false;
+            }
+            return true;
+        }
+    </script>
+</html>

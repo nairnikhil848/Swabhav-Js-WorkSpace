@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body  ng-app="mod1" ng-init="myCol='lightblue'">
+    <h1>Understanding angularjs Expression</h1>
+    <h2>{{ 22/7 | number : 2 }} </h2>
+    <h2  style="background-color:{{myCol}}" >{{ developer.name || 'Your Default Name : Nikhil' | uppercase}}</h2>
+
+    <section ng-controller = "ControllerA">
+        <h3>Developer Name : {{ Developer.Name }}</h3>
+        <h3>Role : {{ Developer.Role }}</h3>
+    </section>
+        <h2>Company Name : {{ Company.Name }}</h2>
+        <h2>Company Strength : {{ Company.Strength }}</h2>
+
+    <script src="angular.js"></script>
+    <script src="module1.min.js"></script>
+
+</body>
+</html>
