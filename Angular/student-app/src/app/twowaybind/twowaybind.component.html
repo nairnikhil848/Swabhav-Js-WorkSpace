@@ -1,0 +1,12 @@
+<p>twowaybind works!</p>
+<section>
+  <h3>{{ firstName }}</h3>
+  <h3>{{ lastName }}</h3>
+
+  FirstName :<input
+    type="text"
+    [ngModel]="firstName"
+    (ngModelChange)="updateFirstName($event)"
+  />
+  LastName :<input type="text" [(ngModel)]="lastName" />
+</section>

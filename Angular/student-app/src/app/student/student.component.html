@@ -1,0 +1,31 @@
+<p>Student-app works!</p>
+<section>
+  <h3 [innerText]="student.name"></h3>
+  <h3
+    [innerText]="student.cgpa"
+    [style.background]="cgpaToColor(student.cgpa)"
+  ></h3>
+  <h3 [innerText]="student.rollno"></h3>
+  <img
+    [src]="student.picture"
+    [attr.width]="imgmaxWidth"
+    [attr.height]="imgmaxHeight"
+  />
+
+  <div>
+    <input type="button" class="btn btn-primary" (click)="load()" value="Load" />
+  </div>
+
+  <div *ngIf="students">
+    <ul>
+      <li *ngFor="let student of students">
+        <p [innerText]="student.name"></p>
+        <p
+          [innerText]="student.cgpa"
+          [style.background]="cgpaToColor(student.cgpa)"
+        ></p>
+        <p [innerText]="student.rollno"></p>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+<div
+  id="frame1"
+  class="text-center"
+  *ngIf="!isStartbtnClicked"
+  data-scrollax-parent="true"
+>
+  <div class="">
+    <h1 class="rules">
+      <i
+        ><span>#</span>
+        <span>R</span>
+        <span>u</span>
+        <span>l</span>
+        <span>e</span>
+        <span>s</span></i
+      >
+    </h1>
+    <br /><br /><br />
+    <h4>
+      <i class="fas fa-angle-right" style="font-size: 24px"></i> Define a
+      (serious) goal
+    </h4>
+    <h4>
+      <i class="fas fa-angle-right" style="font-size: 24px"></i> Fine-tune the
+      balance between entertainment and serious tasks
+    </h4>
+    <h4>
+      <i class="fas fa-angle-right" style="font-size: 24px"></i> Enable the
+      player to interact with scientific data
+    </h4>
+    <h4>
+      <i class="fas fa-angle-right" style="font-size: 24px"></i> Promote
+      onboarding and engagement
+    </h4>
+    <br /><br />
+    <button id="start" (click)="startGame()" class="button">
+      <span>Start</span>
+    </button>
+  </div>
+</div>
+
+<div id="frame2" class="text-center" *ngIf="isStartbtnClicked">
+  <span *ngFor="let ball of balls">
+    <i
+      (click)="render(ball.id)"
+      class="fas fa-volleyball-ball ball"
+      aria-hidden="true"
+      [style.color]="ball.color"
+    ></i>
+  </span>
+</div>
