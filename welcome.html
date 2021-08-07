@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>This is the welcome Page</h1>
+    <script>
+      console.log(typeof window);
+      console.log(typeof this);
+      this == window;
+      var foo;
+      console.log(typeof foo);
+      foo = 10;
+      console.log(typeof foo);
+      foo = 123435365667;
+      console.log(typeof foo);
+      foo = "shivam";
+      console.log(typeof foo);
+      console.log(foo);
+      foo = true;
+      console.log(typeof foo);
+      foo = {};
+      console.log(typeof foo);
+      foo.company = "Swabhav Techlab";
+      console.log(typeof foo);
+      console.log(foo);
+
+      foo = function () {
+        console.log(this == window);
+        console.log("Inside function");
+      };
+      console.log(typeof foo);
+      foo();
+    </script>
+  </body>
+</html>

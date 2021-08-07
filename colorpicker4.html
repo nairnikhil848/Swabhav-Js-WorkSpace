@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <label for="color">Change Background - </label>
+    <select onchange="changeColor();" id="color" name="color">
+      <option value="#838c9c">#838c9c</option>
+      <option value="#254661">#254661</option>
+      <option value="#7d482a">#7d482a</option>
+      <option value="#e41518">#e41518</option>
+    </select>
+
+    <script>
+      function changeColor() {
+        document.body.style.backgroundColor =
+          document.getElementById("color").value;
+      }
+    </script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ball } from '../ball';
 import { BallService } from '../ball.service';
+
 @Component({
   selector: 'app-blueballgame',
   templateUrl: './blueballgame.component.html',
@@ -84,7 +85,4 @@ export class BlueballgameComponent implements OnInit {
   ngOnInit(): void {
     this.getBalls();
   }
-}
-function colors(colors: any) {
-  throw new Error('Function not implemented.');
 }
